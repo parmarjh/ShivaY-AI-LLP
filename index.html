@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Yash Kavaiya - Conversational AI Engineer specializing in Dialogflow CX, Google Cloud Platform, and enterprise virtual agent solutions">
+      <meta name="theme-color" content="#4285F4">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="index, follow">
+      
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                google: {
+                  blue: '#4285F4',
+                  red: '#EA4335',
+                  yellow: '#FBBC04',
+                  green: '#34A853',
+                  'blue-50': '#E8F0FE',
+                  'blue-100': '#D2E3FC',
+                  'blue-600': '#1A73E8',
+                  'blue-700': '#1967D2',
+                  'red-50': '#FCE8E6',
+                  'red-100': '#FAD2CF',
+                  'red-600': '#D33B2C',
+                  'yellow-50': '#FEF7E0',
+                  'yellow-100': '#FEEFC3',
+                  'yellow-600': '#F59E0B',
+                  'green-50': '#E6F4EA',
+                  'green-100': '#CEEAD6',
+                  'green-600': '#137333',
+                  'green-700': '#0F9D58',
+                  'gray-50': '#F8F9FA',
+                  'gray-100': '#F1F3F4',
+                  'gray-200': '#E8EAED',
+                  'gray-300': '#DADCE0',
+                  'gray-400': '#BDC1C6',
+                  'gray-500': '#9AA0A6',
+                  'gray-600': '#80868B',
+                  'gray-700': '#5F6368',
+                  'gray-800': '#3C4043',
+                  'gray-900': '#202124',
+                },
+              },
+              fontFamily: {
+                sans: ['Google Sans', 'Roboto', 'system-ui', 'sans-serif'],
+                heading: ['Google Sans', 'system-ui', 'sans-serif'],
+                body: ['Roboto', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.6s ease-in-out',
+                'slide-up': 'slideUp 0.6s ease-out',
+                'slide-right': 'slideRight 0.6s ease-out',
+                'slide-left': 'slideLeft 0.6s ease-out',
+                'scale-in': 'scaleIn 0.6s ease-out',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(30px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-30px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(30px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0px)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+            },
+          },
+        }
+      </script>
+
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      
+      <!-- Material Icons -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+      <style>
+        * { 
+          scrollbar-width: none; 
+          -ms-overflow-style: none; 
+        }
+        *::-webkit-scrollbar { 
+          display: none; 
+        }
+        body { 
+          font-family: 'Roboto', sans-serif; 
+        }
+        .font-heading { 
+          font-family: 'Google Sans', sans-serif; 
+        }
+        .material-design-shadow {
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .material-design-shadow-lg {
+          box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 16px 32px rgba(0,0,0,0.12);
+        }
+        .google-gradient {
+          background: linear-gradient(45deg, #4285F4, #EA4335, #FBBC04, #34A853);
+        }
+      </style>
+
+      <title>Yash Kavaiya - Conversational AI Engineer | Google Cloud Specialist</title>
+   </head>
+   <body class="antialiased text-google-gray-800 min-h-screen">
+
+      <!-- Navigation -->
+      <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md text-google-gray-800 border-b border-google-gray-200 material-design-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 google-gradient rounded-full animate-float"></div>
+              <span class="text-xl font-bold font-heading text-google-gray-900">Yash Kavaiya</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-1">
+              <a href="#about" class="hover:bg-google-blue-50 text-google-gray-700 hover:text-google-blue px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">About</a>
+              <a href="#experience" class="hover:bg-google-blue-50 text-google-gray-700 hover:text-google-blue px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">Experience</a>
+              <a href="#expertise" class="hover:bg-google-blue-50 text-google-gray-700 hover:text-google-blue px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">Expertise</a>
+              <a href="#projects" class="hover:bg-google-blue-50 text-google-gray-700 hover:text-google-blue px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">Projects</a>
+              <a href="#education" class="hover:bg-google-blue-50 text-google-gray-700 hover:text-google-blue px-4 py-2 rounded-full text-sm font-medium transition-all duration-200">Education</a>
+              <a href="#contact" class="bg-google-blue hover:bg-google-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 material-design-shadow">Contact</a>
+            </div>
+
+            <div class="md:hidden">
+              <button id="mobile-menu-button" class="p-2 rounded-full text-google-gray-700 hover:bg-google-gray-100 transition-colors">
+                <i class="material-icons">menu</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-google-gray-200">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#about" class="block hover:bg-google-blue-50 text-google-gray-700 px-3 py-2 rounded-lg">About</a>
+            <a href="#experience" class="block hover:bg-google-blue-50 text-google-gray-700 px-3 py-2 rounded-lg">Experience</a>
+            <a href="#expertise" class="block hover:bg-google-blue-50 text-google-gray-700 px-3 py-2 rounded-lg">Expertise</a>
+            <a href="#projects" class="block hover:bg-google-blue-50 text-google-gray-700 px-3 py-2 rounded-lg">Projects</a>
+            <a href="#education" class="block hover:bg-google-blue-50 text-google-gray-700 px-3 py-2 rounded-lg">Education</a>
+            <a href="#contact" class="block bg-google-blue text-white px-3 py-2 rounded-lg">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="bg-gradient-to-br from-google-blue-50 via-white to-google-green-50 min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="animate-slide-up">
+              <div class="inline-flex items-center px-4 py-2 bg-google-blue-50 text-google-blue rounded-full text-sm font-medium mb-6 border border-google-blue-100">
+                <span class="w-2 h-2 bg-google-green rounded-full mr-2 animate-pulse"></span>
+                Available for new opportunities
+              </div>
+              
+              <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight font-heading">
+                Hi, I'm 
+                <span class="bg-gradient-to-r from-google-blue via-google-red to-google-green bg-clip-text text-transparent">
+                  Yash Kavaiya
+                </span>
+              </h1>
+              
+              <h2 class="text-2xl md:text-3xl mb-6 text-google-gray-700 font-medium">
+                Conversational AI Engineer
+              </h2>
+              
+              <p class="text-lg mb-8 text-google-gray-600 leading-relaxed max-w-xl">
+                Experienced engineer with <strong>3+ years</strong> of expertise in designing and implementing virtual agent solutions on <strong>Google's platforms</strong>, particularly <strong>Dialogflow CX</strong>. Specialized in delivering end-to-end chatbot implementations for enterprise clients.
+              </p>
+              
+              <div class="flex flex-wrap gap-4 mb-8">
+                <a href="#contact" class="bg-google-blue hover:bg-google-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 material-design-shadow hover:material-design-shadow-lg">
+                  <i class="material-icons inline mr-2 align-middle">email</i>
+                  Get In Touch
+                </a>
+                <a href="#projects" class="border-2 border-google-blue text-google-blue hover:bg-google-blue hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+                  <i class="material-icons inline mr-2 align-middle">code</i>
+                  View Projects
+                </a>
+              </div>
+              
+              <div class="flex space-x-4">
+                <a href="mailto:yash.kavaiya3@gmail.com" 
+                   class="p-4 bg-google-red text-white rounded-full hover:bg-google-red-600 transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                   title="Email">
+                  <i class="material-icons">email</i>
+                </a>
+                <a href="https://linkedin.com/in/yashkavaiya" 
+                   target="_blank"
+                   class="p-4 bg-google-blue text-white rounded-full hover:bg-google-blue-600 transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                   title="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Yash-Kavaiya" 
+                   target="_blank"
+                   class="p-4 bg-google-gray-800 text-white rounded-full hover:bg-google-gray-900 transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                   title="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="tel:+919265745362" 
+                   class="p-4 bg-google-green text-white rounded-full hover:bg-google-green-600 transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                   title="Phone">
+                  <i class="material-icons">phone</i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="animate-slide-left">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 google-gradient"></div>
+                
+                <div class="text-sm text-google-blue mb-4 font-semibold flex items-center">
+                  <i class="material-icons text-base mr-2">work</i>
+                  Currently working as
+                </div>
+                
+                <div class="mb-6">
+                  <h3 class="text-2xl font-bold text-google-gray-900 font-heading">Senior Analyst</h3>
+                  <p class="text-google-blue text-lg font-semibold">Accenture, Pune</p>
+                  <p class="text-google-gray-600 text-sm">Oct 2024 - Present</p>
+                </div>
+                
+                <div class="space-y-4 mb-6">
+                  <div class="flex items-center p-4 bg-google-blue-50 rounded-2xl border-l-4 border-google-blue">
+                    <div class="w-12 h-12 bg-google-blue rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white">smart_toy</i>
+                    </div>
+                    <div>
+                      <span class="text-google-gray-800 font-medium">Dialogflow CX Expert</span>
+                      <p class="text-xs text-google-gray-600">Production-ready virtual agents</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center p-4 bg-google-green-50 rounded-2xl border-l-4 border-google-green">
+                    <div class="w-12 h-12 bg-google-green rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white">cloud</i>
+                    </div>
+                    <div>
+                      <span class="text-google-gray-800 font-medium">Google Cloud Platform</span>
+                      <p class="text-xs text-google-gray-600">Enterprise cloud solutions</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center p-4 bg-google-yellow-50 rounded-2xl border-l-4 border-google-yellow">
+                    <div class="w-12 h-12 bg-google-yellow rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white">support_agent</i>
+                    </div>
+                    <div>
+                      <span class="text-google-gray-800 font-medium">Contact Center AI</span>
+                      <p class="text-xs text-google-gray-600">CCAI implementations</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-google-blue-100 text-google-blue px-3 py-1 rounded-full text-sm font-medium">Conversational AI</span>
+                  <span class="bg-google-green-100 text-google-green px-3 py-1 rounded-full text-sm font-medium">Virtual Agents</span>
+                  <span class="bg-google-red-100 text-google-red px-3 py-1 rounded-full text-sm font-medium">Enterprise Solutions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-google-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-fade-in">
+              <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading text-google-gray-900">
+                Professional Summary
+              </h2>
+              <div class="w-24 h-1 bg-gradient-to-r from-google-blue to-google-green mx-auto rounded-full"></div>
+              <p class="text-google-gray-600 mt-4 max-w-2xl mx-auto">
+                Delivering measurable impact through innovative AI solutions and enterprise-grade implementations
+              </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+              <!-- Experience Highlights -->
+              <div class="animate-slide-right">
+                <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-google-blue-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-blue">trending_up</i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-google-gray-900 font-heading">Experience Highlights</h3>
+                  </div>
+                  
+                  <div class="space-y-6">
+                    <div class="flex items-start">
+                      <div class="w-4 h-4 bg-google-blue rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                      <div>
+                        <p class="font-semibold text-google-gray-800 mb-1">3+ Years of Conversational AI Expertise</p>
+                        <p class="text-google-gray-600 text-sm">Specialized in Dialogflow CX and Google's Contact Center AI platform with proven enterprise delivery experience</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                      <div class="w-4 h-4 bg-google-green rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                      <div>
+                        <p class="font-semibold text-google-gray-800 mb-1">Enterprise Client Focus</p>
+                        <p class="text-google-gray-600 text-sm">Successfully delivered solutions across fintech, telecom, and F&B sectors for major enterprise clients</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                      <div class="w-4 h-4 bg-google-red rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                      <div>
+                        <p class="font-semibold text-google-gray-800 mb-1">Proven Results & ROI</p>
+                        <p class="text-google-gray-600 text-sm">Delivered measurable improvements in customer experience and operational efficiency with quantifiable business impact</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                      <div class="w-4 h-4 bg-google-yellow rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                      <div>
+                        <p class="font-semibold text-google-gray-800 mb-1">Google Cloud Certified Professional</p>
+                        <p class="text-google-gray-600 text-sm">Multiple Google Cloud certifications in AI, ML, and cloud architecture with hands-on implementation experience</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Achievements -->
+              <div class="animate-slide-left">
+                <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-google-green-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-green">emoji_events</i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-google-green-700 font-heading">Key Achievements</h3>
+                  </div>
+                  
+                  <div class="space-y-4">
+                    <div class="p-4 bg-google-blue-50 rounded-2xl border-l-4 border-google-blue">
+                      <div class="flex items-center mb-2">
+                        <div class="w-12 h-12 bg-google-blue rounded-xl flex items-center justify-center mr-4">
+                          <span class="text-white font-bold text-lg">40%</span>
+                        </div>
+                        <div>
+                          <p class="font-semibold text-google-gray-800">Reduction in Average Resolution Time</p>
+                          <p class="text-google-gray-600 text-sm">Enterprise virtual agent implementation</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="p-4 bg-google-green-50 rounded-2xl border-l-4 border-google-green">
+                      <div class="flex items-center mb-2">
+                        <div class="w-12 h-12 bg-google-green rounded-xl flex items-center justify-center mr-4">
+                          <span class="text-white font-bold text-lg">30%</span>
+                        </div>
+                        <div>
+                          <p class="font-semibold text-google-gray-800">Reduction in Data Retrieval Time</p>
+                          <p class="text-google-gray-600 text-sm">Cloud-based AI solutions architecture</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="p-4 bg-google-red-50 rounded-2xl border-l-4 border-google-red">
+                      <div class="flex items-center mb-2">
+                        <div class="w-12 h-12 bg-google-red rounded-xl flex items-center justify-center mr-4">
+                          <span class="text-white font-bold text-lg">25%</span>
+                        </div>
+                        <div>
+                          <p class="font-semibold text-google-gray-800">Increase in Customer Engagement</p>
+                          <p class="text-google-gray-600 text-sm">Voice-enabled virtual agent for telecom</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="p-4 bg-google-yellow-50 rounded-2xl border-l-4 border-google-yellow">
+                      <div class="flex items-center mb-2">
+                        <div class="w-12 h-12 bg-google-yellow rounded-xl flex items-center justify-center mr-4">
+                          <span class="text-white font-bold text-lg">35%</span>
+                        </div>
+                        <div>
+                          <p class="font-semibold text-google-gray-800">Improvement in Test Coverage</p>
+                          <p class="text-google-gray-600 text-sm">QA Engineer AI Agent automation</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading text-google-gray-900">
+              Professional Experience
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-google-red to-google-yellow mx-auto rounded-full"></div>
+            <p class="text-google-gray-600 mt-4 max-w-2xl mx-auto">
+              Leading AI initiatives and delivering enterprise-grade conversational solutions
+            </p>
+          </div>
+
+          <div class="max-w-6xl mx-auto space-y-12">
+            <!-- Accenture -->
+            <div class="animate-slide-up">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-google-blue"></div>
+                
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                  <div class="flex items-center mb-4 lg:mb-0">
+                    <div class="w-16 h-16 bg-google-blue-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-blue">business</i>
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold text-google-gray-900 font-heading">Senior Analyst</h3>
+                      <h4 class="text-google-blue text-lg font-semibold">Accenture</h4>
+                      <p class="text-google-gray-600 text-sm">Oct 2024 - Present | Pune, India</p>
+                    </div>
+                  </div>
+                  
+                  <div class="text-right">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-google-green-100 text-google-green">
+                      <i class="material-icons text-sm mr-1">schedule</i>
+                      Current Role
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div class="p-4 bg-google-blue-50 rounded-2xl">
+                    <i class="material-icons text-google-blue mb-2">check_circle</i>
+                    <p class="text-sm font-medium text-google-gray-800">Production-Ready Virtual Agent</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Developed and deployed Dialogflow CX solution for client POC with advanced conversation flows</p>
+                  </div>
+                  
+                  <div class="p-4 bg-google-blue-50 rounded-2xl">
+                    <i class="material-icons text-google-blue mb-2">groups</i>
+                    <p class="text-sm font-medium text-google-gray-800">Executive Collaboration</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Collaborated with client technical leads and executives for comprehensive CCAI implementation</p>
+                  </div>
+                  
+                  <div class="p-4 bg-google-blue-50 rounded-2xl">
+                    <i class="material-icons text-google-blue mb-2">engineering</i>
+                    <p class="text-sm font-medium text-google-gray-800">QA Engineer AI Agent</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Created AI agent for testing automation, improving coverage by 35% and accelerating development</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TCS -->
+            <div class="animate-slide-up">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-google-green"></div>
+                
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                  <div class="flex items-center mb-4 lg:mb-0">
+                    <div class="w-16 h-16 bg-google-green-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-green">precision_manufacturing</i>
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold text-google-gray-900 font-heading">AI Engineer</h3>
+                      <h4 class="text-google-green text-lg font-semibold">Tata Consultancy Services</h4>
+                      <p class="text-google-gray-600 text-sm">Oct 2021 - Oct 2024 | Bangalore, India</p>
+                    </div>
+                  </div>
+                  
+                  <div class="text-right">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-google-gray-100 text-google-gray-700">
+                      <i class="material-icons text-sm mr-1">schedule</i>
+                      3 Years
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                  <div class="p-4 bg-google-green-50 rounded-2xl">
+                    <i class="material-icons text-google-green mb-2">groups</i>
+                    <p class="text-sm font-medium text-google-gray-800">Cross-Functional Leadership</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Led teams designing virtual agent solutions for fintech, telecom, and F&B sectors</p>
+                  </div>
+                  
+                  <div class="p-4 bg-google-green-50 rounded-2xl">
+                    <i class="material-icons text-google-green mb-2">architecture</i>
+                    <p class="text-sm font-medium text-google-gray-800">Cloud Architecture</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Architected cloud-based conversational AI solutions using Google Cloud Platform suite</p>
+                  </div>
+                  
+                  <div class="p-4 bg-google-green-50 rounded-2xl">
+                    <i class="material-icons text-google-green mb-2">record_voice_over</i>
+                    <p class="text-sm font-medium text-google-gray-800">Voice-Enabled Solutions</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Delivered voice-enabled virtual agent resulting in 25% increase in customer engagement</p>
+                  </div>
+                  
+                  <div class="p-4 bg-google-green-50 rounded-2xl">
+                    <i class="material-icons text-google-green mb-2">analytics</i>
+                    <p class="text-sm font-medium text-google-gray-800">Analytics Dashboards</p>
+                    <p class="text-xs text-google-gray-600 mt-1">Built custom analytics dashboards providing actionable insights from virtual agent interactions</p>
+                  </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-google-blue text-white px-4 py-2 rounded-full text-sm font-medium">Dialogflow CX</span>
+                  <span class="bg-google-green text-white px-4 py-2 rounded-full text-sm font-medium">Cloud Run</span>
+                  <span class="bg-google-red text-white px-4 py-2 rounded-full text-sm font-medium">BigQuery</span>
+                  <span class="bg-google-yellow text-white px-4 py-2 rounded-full text-sm font-medium">Vertex AI</span>
+                  <span class="bg-google-blue text-white px-4 py-2 rounded-full text-sm font-medium">Firestore</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Expertise Section -->
+      <section id="expertise" class="py-20 bg-google-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading text-google-gray-900">
+              Technical Expertise
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-google-yellow to-google-red mx-auto rounded-full"></div>
+            <p class="text-google-gray-600 mt-4 max-w-2xl mx-auto">
+              Specialized in Google's ecosystem with deep expertise in conversational AI and cloud technologies
+            </p>
+          </div>
+
+          <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-16">
+              <!-- Conversational AI -->
+              <div class="animate-scale-in">
+                <div class="bg-white rounded-3xl p-6 material-design-shadow-lg border border-google-gray-100 h-full text-center">
+                  <div class="w-20 h-20 bg-google-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                    <i class="material-icons text-3xl text-google-blue">smart_toy</i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-4 font-heading text-google-gray-900">Conversational AI</h3>
+                  <div class="space-y-3">
+                    <div class="bg-google-blue-50 p-3 rounded-xl border-l-4 border-google-blue">
+                      <span class="text-sm font-medium text-google-gray-800">Dialogflow CX/ES</span>
+                    </div>
+                    <div class="bg-google-blue-50 p-3 rounded-xl border-l-4 border-google-blue">
+                      <span class="text-sm font-medium text-google-gray-800">Google CCAI Platform</span>
+                    </div>
+                    <div class="bg-google-blue-50 p-3 rounded-xl border-l-4 border-google-blue">
+                      <span class="text-sm font-medium text-google-gray-800">Virtual Agent Development</span>
+                    </div>
+                    <div class="bg-google-blue-50 p-3 rounded-xl border-l-4 border-google-blue">
+                      <span class="text-sm font-medium text-google-gray-800">Intent Mapping & NLU</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cloud Technologies -->
+              <div class="animate-scale-in">
+                <div class="bg-white rounded-3xl p-6 material-design-shadow-lg border border-google-gray-100 h-full text-center">
+                  <div class="w-20 h-20 bg-google-green-50 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                    <i class="material-icons text-3xl text-google-green">cloud</i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-4 font-heading text-google-gray-900">Cloud Technologies</h3>
+                  <div class="space-y-3">
+                    <div class="bg-google-green-50 p-3 rounded-xl border-l-4 border-google-green">
+                      <span class="text-sm font-medium text-google-gray-800">Google Cloud Platform</span>
+                    </div>
+                    <div class="bg-google-green-50 p-3 rounded-xl border-l-4 border-google-green">
+                      <span class="text-sm font-medium text-google-gray-800">Cloud Run & Functions</span>
+                    </div>
+                    <div class="bg-google-green-50 p-3 rounded-xl border-l-4 border-google-green">
+                      <span class="text-sm font-medium text-google-gray-800">BigQuery & Analytics</span>
+                    </div>
+                    <div class="bg-google-green-50 p-3 rounded-xl border-l-4 border-google-green">
+                      <span class="text-sm font-medium text-google-gray-800">Vertex AI & AutoML</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI/ML -->
+              <div class="animate-scale-in">
+                <div class="bg-white rounded-3xl p-6 material-design-shadow-lg border border-google-gray-100 h-full text-center">
+                  <div class="w-20 h-20 bg-google-red-50 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                    <i class="material-icons text-3xl text-google-red">psychology</i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-4 font-heading text-google-gray-900">AI/ML</h3>
+                  <div class="space-y-3">
+                    <div class="bg-google-red-50 p-3 rounded-xl border-l-4 border-google-red">
+                      <span class="text-sm font-medium text-google-gray-800">Natural Language Processing</span>
+                    </div>
+                    <div class="bg-google-red-50 p-3 rounded-xl border-l-4 border-google-red">
+                      <span class="text-sm font-medium text-google-gray-800">Large Language Models</span>
+                    </div>
+                    <div class="bg-google-red-50 p-3 rounded-xl border-l-4 border-google-red">
+                      <span class="text-sm font-medium text-google-gray-800">RAG Implementation</span>
+                    </div>
+                    <div class="bg-google-red-50 p-3 rounded-xl border-l-4 border-google-red">
+                      <span class="text-sm font-medium text-google-gray-800">TensorFlow & PyTorch</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Development -->
+              <div class="animate-scale-in">
+                <div class="bg-white rounded-3xl p-6 material-design-shadow-lg border border-google-gray-100 h-full text-center">
+                  <div class="w-20 h-20 bg-google-yellow-50 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                    <i class="material-icons text-3xl text-google-yellow-600">code</i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-4 font-heading text-google-gray-900">Development</h3>
+                  <div class="space-y-3">
+                    <div class="bg-google-yellow-50 p-3 rounded-xl border-l-4 border-google-yellow">
+                      <span class="text-sm font-medium text-google-gray-800">Python & JavaScript</span>
+                    </div>
+                    <div class="bg-google-yellow-50 p-3 rounded-xl border-l-4 border-google-yellow">
+                      <span class="text-sm font-medium text-google-gray-800">SQL & NoSQL</span>
+                    </div>
+                    <div class="bg-google-yellow-50 p-3 rounded-xl border-l-4 border-google-yellow">
+                      <span class="text-sm font-medium text-google-gray-800">REST APIs & GraphQL</span>
+                    </div>
+                    <div class="bg-google-yellow-50 p-3 rounded-xl border-l-4 border-google-yellow">
+                      <span class="text-sm font-medium text-google-gray-800">Flask & FastAPI</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Certifications Highlight -->
+            <div class="text-center animate-fade-in">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 max-w-5xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                  <div class="w-20 h-20 google-gradient rounded-3xl flex items-center justify-center mr-6">
+                    <i class="fab fa-google text-white text-3xl"></i>
+                  </div>
+                  <div class="text-left">
+                    <h3 class="text-3xl font-bold text-google-gray-900 font-heading">Google Cloud Certified Professional</h3>
+                    <p class="text-google-gray-600">Specialized certifications in Google's AI and Cloud technologies</p>
+                  </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div class="bg-google-blue-50 p-6 rounded-2xl border border-google-blue-200">
+                    <div class="w-12 h-12 bg-google-blue rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <i class="material-icons text-white">verified_user</i>
+                    </div>
+                    <p class="font-semibold text-google-blue mb-2">Virtual Agent Development</p>
+                    <p class="text-sm text-google-gray-600">Dialogflow CX for Software Developers</p>
+                  </div>
+                  
+                  <div class="bg-google-green-50 p-6 rounded-2xl border border-google-green-200">
+                    <div class="w-12 h-12 bg-google-green rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <i class="material-icons text-white">support_agent</i>
+                    </div>
+                    <p class="font-semibold text-google-green mb-2">Contact Center AI</p>
+                    <p class="text-sm text-google-gray-600">Conversational Design Fundamentals</p>
+                  </div>
+                  
+                  <div class="bg-google-red-50 p-6 rounded-2xl border border-google-red-200">
+                    <div class="w-12 h-12 bg-google-red rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <i class="material-icons text-white">settings</i>
+                    </div>
+                    <p class="font-semibold text-google-red mb-2">Advanced Agent Design</p>
+                    <p class="text-sm text-google-gray-600">Dialogflow CX Implementation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading text-google-gray-900">
+              Featured AI Implementations
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-google-green to-google-blue mx-auto rounded-full"></div>
+            <p class="text-google-gray-600 mt-4 max-w-2xl mx-auto">
+              Enterprise-grade conversational AI solutions delivered across multiple industries
+            </p>
+          </div>
+
+          <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+              <!-- Enterprise Virtual Agent -->
+              <div class="animate-slide-up">
+                <div class="bg-white rounded-3xl p-8 material-design-shadow-lg border border-google-gray-100 hover:material-design-shadow-lg transition-all duration-300 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-google-blue-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-blue">smart_toy</i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-google-gray-900 font-heading">Enterprise Virtual Agent</h3>
+                      <p class="text-google-gray-600 text-sm">Customer Service Automation</p>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-google-blue text-white px-3 py-1 rounded-full text-sm">Dialogflow CX</span>
+                      <span class="bg-google-green text-white px-3 py-1 rounded-full text-sm">Enterprise</span>
+                      <span class="bg-google-red text-white px-3 py-1 rounded-full text-sm">Production</span>
+                    </div>
+                  </div>
+                  
+                  <p class="text-google-gray-600 mb-6 leading-relaxed">
+                    AI-powered virtual agent handling routine inquiries, appointment scheduling, and complex issue escalation with robust security and compliance measures.
+                  </p>
+                  
+                  <div class="space-y-3">
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700"><strong>40% reduction</strong> in average resolution time</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Complete deployment lifecycle management</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Enhanced security and compliance measures</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contact Center AI -->
+              <div class="animate-slide-up">
+                <div class="bg-white rounded-3xl p-8 material-design-shadow-lg border border-google-gray-100 hover:material-design-shadow-lg transition-all duration-300 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-google-green-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-green">support_agent</i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-google-gray-900 font-heading">Contact Center AI</h3>
+                      <p class="text-google-gray-600 text-sm">Sentiment Analysis & Insights</p>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-google-green text-white px-3 py-1 rounded-full text-sm">CCAI</span>
+                      <span class="bg-google-red text-white px-3 py-1 rounded-full text-sm">NLP</span>
+                      <span class="bg-google-yellow text-white px-3 py-1 rounded-full text-sm">Analytics</span>
+                    </div>
+                  </div>
+                  
+                  <p class="text-google-gray-600 mb-6 leading-relaxed">
+                    Comprehensive CCAI solution with Dialogflow CX virtual agents, Agent Assist, and Conversational Insights featuring advanced sentiment analysis.
+                  </p>
+                  
+                  <div class="space-y-3">
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Advanced emotion and sarcasm detection</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Executive alignment with measurable ROI</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Customer needs advocacy and feature development</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banking Assistant -->
+              <div class="animate-slide-up">
+                <div class="bg-white rounded-3xl p-8 material-design-shadow-lg border border-google-gray-100 hover:material-design-shadow-lg transition-all duration-300 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-google-red-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-red">account_balance</i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-google-gray-900 font-heading">Banking Assistant with RAG</h3>
+                      <p class="text-google-gray-600 text-sm">Multi-Channel Financial Advisor</p>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-google-red text-white px-3 py-1 rounded-full text-sm">RAG</span>
+                      <span class="bg-google-yellow text-white px-3 py-1 rounded-full text-sm">Banking</span>
+                      <span class="bg-google-blue text-white px-3 py-1 rounded-full text-sm">Multi-Channel</span>
+                    </div>
+                  </div>
+                  
+                  <p class="text-google-gray-600 mb-6 leading-relaxed">
+                    Financial advisor virtual agent using Dialogflow CX with Retrieval-Augmented Generation for accurate responses to complex financial queries.
+                  </p>
+                  
+                  <div class="space-y-3">
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700"><strong>90% positive feedback</strong> across all channels</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Secure banking core system integration</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Regulatory compliance and data protection</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Retail Virtual Agent -->
+              <div class="animate-slide-up">
+                <div class="bg-white rounded-3xl p-8 material-design-shadow-lg border border-google-gray-100 hover:material-design-shadow-lg transition-all duration-300 h-full">
+                  <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-google-yellow-50 rounded-2xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-2xl text-google-yellow-600">shopping_cart</i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-google-gray-900 font-heading">Omni-Channel Retail Agent</h3>
+                      <p class="text-google-gray-600 text-sm">Unified Customer Experience</p>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-google-yellow text-white px-3 py-1 rounded-full text-sm">Retail</span>
+                      <span class="bg-google-blue text-white px-3 py-1 rounded-full text-sm">Omni-Channel</span>
+                      <span class="bg-google-green text-white px-3 py-1 rounded-full text-sm">CRM</span>
+                    </div>
+                  </div>
+                  
+                  <p class="text-google-gray-600 mb-6 leading-relaxed">
+                    Cloud-based conversational solution enabling seamless customer interactions across web, mobile, and in-store kiosks with real-time inventory management.
+                  </p>
+                  
+                  <div class="space-y-3">
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Real-time inventory and order status updates</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Personalized product recommendations</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                      <i class="material-icons text-google-green mr-3">check_circle</i>
+                      <span class="text-google-gray-700">Brand-aligned conversation experiences</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hackathon Projects -->
+            <div class="animate-fade-in">
+              <h3 class="text-2xl font-bold text-center mb-8 font-heading text-google-gray-900">Innovation & Hackathons</h3>
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl material-design-shadow border border-google-gray-100 text-center hover:material-design-shadow-lg transition-all duration-300">
+                  <div class="w-16 h-16 bg-google-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="material-icons text-2xl text-google-yellow-600">emoji_events</i>
+                  </div>
+                  <h4 class="font-bold text-google-gray-900 mb-2 font-heading">BoBuddy</h4>
+                  <p class="text-sm text-google-gray-600 mb-2">Bank of Baroda Hackathon 2024</p>
+                  <p class="text-xs text-google-gray-500">Conversational banking solution showcasing innovative customer service through AI</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl material-design-shadow border border-google-gray-100 text-center hover:material-design-shadow-lg transition-all duration-300">
+                  <div class="w-16 h-16 bg-google-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="material-icons text-2xl text-google-blue">workspace_premium</i>
+                  </div>
+                  <h4 class="font-bold text-google-gray-900 mb-2 font-heading">Banky</h4>
+                  <p class="text-sm text-google-gray-600 mb-2">Google Vertex AI Hackathon - Finalist</p>
+                  <p class="text-xs text-google-gray-500">Advanced virtual agent with intelligent financial advisory capabilities</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl material-design-shadow border border-google-gray-100 text-center hover:material-design-shadow-lg transition-all duration-300">
+                  <div class="w-16 h-16 bg-google-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="material-icons text-2xl text-google-red">medical_services</i>
+                  </div>
+                  <h4 class="font-bold text-google-gray-900 mb-2 font-heading">Mixtral Healthcare</h4>
+                  <p class="text-sm text-google-gray-600 mb-2">Mixtral Hackathon</p>
+                  <p class="text-xs text-google-gray-500">Healthcare conversational solution demonstrating technical excellence and real-world applicability</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="py-20 bg-google-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading text-google-gray-900">
+              Education & Certifications
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-google-red to-google-blue mx-auto rounded-full"></div>
+            <p class="text-google-gray-600 mt-4 max-w-2xl mx-auto">
+              Strong academic foundation with industry-leading certifications
+            </p>
+          </div>
+
+          <div class="max-w-6xl mx-auto">
+            <!-- Education -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+              <!-- IIT Madras -->
+              <div class="animate-slide-right">
+                <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 h-full">
+                  <div class="flex items-start mb-6">
+                    <div class="w-16 h-16 bg-google-blue-50 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0">
+                      <i class="material-icons text-2xl text-google-blue">school</i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-google-gray-900 font-heading mb-1">IIT Madras</h3>
+                      <p class="text-google-blue font-semibold mb-1">Online Diploma in Data Science</p>
+                      <p class="text-google-gray-600 text-sm mb-2">Mar 2021 - Ongoing</p>
+                      <div class="inline-flex items-center px-3 py-1 bg-google-blue-100 text-google-blue rounded-full text-sm font-medium">
+                        <i class="material-icons text-sm mr-1">star</i>
+                        GPA: 3.25/4
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <h4 class="font-semibold text-google-gray-800 mb-3">Relevant Coursework:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-google-blue-100 text-google-blue px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                      <span class="bg-google-blue-100 text-google-blue px-3 py-1 rounded-full text-sm">Advanced Mathematics</span>
+                      <span class="bg-google-blue-100 text-google-blue px-3 py-1 rounded-full text-sm">Statistics</span>
+                      <span class="bg-google-blue-100 text-google-blue px-3 py-1 rounded-full text-sm">Tools of Data Science</span>
+                      <span class="bg-google-blue-100 text-google-blue px-3 py-1 rounded-full text-sm">Business Analytics</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NIT Surat -->
+              <div class="animate-slide-left">
+                <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100 h-full">
+                  <div class="flex items-start mb-6">
+                    <div class="w-16 h-16 bg-google-green-50 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0">
+                      <i class="material-icons text-2xl text-google-green">science</i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-google-gray-900 font-heading mb-1">NIT Surat</h3>
+                      <p class="text-google-green font-semibold mb-1">Master of Science in Physics</p>
+                      <p class="text-google-gray-600 text-sm mb-2">2017 - 2021</p>
+                      <div class="inline-flex items-center px-3 py-1 bg-google-green-100 text-google-green rounded-full text-sm font-medium">
+                        <i class="material-icons text-sm mr-1">star</i>
+                        CGPA: 9.15/10
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <h4 class="font-semibold text-google-gray-800 mb-3">Relevant Coursework:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-google-green-100 text-google-green px-3 py-1 rounded-full text-sm">Mathematical Physics</span>
+                      <span class="bg-google-green-100 text-google-green px-3 py-1 rounded-full text-sm">Probability & Statistics</span>
+                      <span class="bg-google-green-100 text-google-green px-3 py-1 rounded-full text-sm">MATLAB</span>
+                      <span class="bg-google-green-100 text-google-green px-3 py-1 rounded-full text-sm">Linear Algebra</span>
+                      <span class="bg-google-green-100 text-google-green px-3 py-1 rounded-full text-sm">Computational Applications</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Certifications -->
+            <div class="animate-fade-in">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100">
+                <h3 class="text-2xl font-bold text-center mb-8 font-heading text-google-gray-900">Professional Certifications</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                  <!-- Google Cloud -->
+                  <div class="text-center">
+                    <div class="w-20 h-20 bg-google-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                      <i class="fab fa-google text-3xl text-google-blue"></i>
+                    </div>
+                    <h4 class="font-bold text-google-gray-900 mb-4 font-heading">Google Cloud</h4>
+                    <div class="space-y-3 text-sm text-google-gray-600">
+                      <div class="flex items-center p-3 bg-google-blue-50 rounded-lg">
+                        <i class="material-icons text-google-blue mr-2 text-sm">verified</i>
+                        <span>Virtual Agent Development in Dialogflow CX</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-google-blue-50 rounded-lg">
+                        <i class="material-icons text-google-blue mr-2 text-sm">verified</i>
+                        <span>Contact Center AI: Conversational Design</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-google-blue-50 rounded-lg">
+                        <i class="material-icons text-google-blue mr-2 text-sm">verified</i>
+                        <span>Advanced Agent Design & Implementation</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Microsoft -->
+                  <div class="text-center">
+                    <div class="w-20 h-20 bg-google-green-50 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                      <i class="fab fa-microsoft text-3xl text-google-green"></i>
+                    </div>
+                    <h4 class="font-bold text-google-gray-900 mb-4 font-heading">Microsoft</h4>
+                    <div class="space-y-3 text-sm text-google-gray-600">
+                      <div class="flex items-center p-3 bg-google-green-50 rounded-lg">
+                        <i class="material-icons text-google-green mr-2 text-sm">verified</i>
+                        <span>Azure AI Fundamentals (AI-900)</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-google-green-50 rounded-lg">
+                        <i class="material-icons text-google-green mr-2 text-sm">verified</i>
+                        <span>Azure Data Fundamentals (DP-900)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Additional Training -->
+                  <div class="text-center">
+                    <div class="w-20 h-20 bg-google-red-50 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                      <i class="material-icons text-3xl text-google-red">military_tech</i>
+                    </div>
+                    <h4 class="font-bold text-google-gray-900 mb-4 font-heading">Additional Training</h4>
+                    <div class="space-y-3 text-sm text-google-gray-600">
+                      <div class="flex items-center p-3 bg-google-red-50 rounded-lg">
+                        <i class="material-icons text-google-red mr-2 text-sm">verified</i>
+                        <span>Data Analytics with Python (IIT Roorkee)</span>
+                      </div>
+                      <div class="flex items-center p-3 bg-google-red-50 rounded-lg">
+                        <i class="material-icons text-google-red mr-2 text-sm">verified</i>
+                        <span>Python for Data Science (IIT Madras)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Community Contributions -->
+                <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-google-gray-200">
+                  <!-- Achievements -->
+                  <div>
+                    <div class="flex items-center mb-4">
+                      <div class="w-12 h-12 bg-google-yellow-50 rounded-xl flex items-center justify-center mr-3">
+                        <i class="material-icons text-google-yellow-600">emoji_events</i>
+                      </div>
+                      <h4 class="text-lg font-bold text-google-gray-900 font-heading">Achievements & Innovation</h4>
+                    </div>
+                    <div class="space-y-3">
+                      <div class="flex items-start">
+                        <i class="material-icons text-google-yellow-600 mt-1 mr-3 text-sm">star</i>
+                        <p class="text-sm text-google-gray-700">Multiple hackathon finalist positions including Google Vertex AI Hackathon</p>
+                      </div>
+                      <div class="flex items-start">
+                        <i class="material-icons text-google-yellow-600 mt-1 mr-3 text-sm">lightbulb</i>
+                        <p class="text-sm text-google-gray-700">Innovative solutions in banking, healthcare, and conversational AI domains</p>
+                      </div>
+                      <div class="flex items-start">
+                        <i class="material-icons text-google-yellow-600 mt-1 mr-3 text-sm">code</i>
+                        <p class="text-sm text-google-gray-700">Created "Dialogflow Buddy" productivity tool with 500+ LinkedIn community</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Community -->
+                  <div>
+                    <div class="flex items-center mb-4">
+                      <div class="w-12 h-12 bg-google-blue-50 rounded-xl flex items-center justify-center mr-3">
+                        <i class="material-icons text-google-blue">groups</i>
+                      </div>
+                      <h4 class="text-lg font-bold text-google-gray-900 font-heading">Community Contributions</h4>
+                    </div>
+                    <div class="space-y-3">
+                      <div class="flex items-start">
+                        <i class="material-icons text-google-blue mt-1 mr-3 text-sm">mic</i>
+                        <p class="text-sm text-google-gray-700">Speaker at GDG Community Day on "Building Intelligent Agents with Vertex AI"</p>
+                      </div>
+                      <div class="flex items-start">
+                        <i class="material-icons text-google-blue mt-1 mr-3 text-sm">presentation</i>
+                        <p class="text-sm text-google-gray-700">Technical presenter at MIT Pune GDGoc WOW on "Creating AI Agents"</p>
+                      </div>
+                      <div class="flex items-start">
+                        <i class="material-icons text-google-blue mt-1 mr-3 text-sm">article</i>
+                        <p class="text-sm text-google-gray-700">Authored technical articles on Dialogflow CX best practices</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading text-google-gray-900">
+              Let's Connect
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-google-blue to-google-green mx-auto rounded-full"></div>
+            <p class="text-google-gray-600 mt-4 max-w-2xl mx-auto">
+              Ready to discuss your next conversational AI project or explore collaboration opportunities
+            </p>
+          </div>
+
+          <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div class="animate-slide-right">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100">
+                <h3 class="text-2xl font-bold text-google-gray-900 mb-8 font-heading">Get In Touch</h3>
+                
+                <div class="space-y-6">
+                  <div class="flex items-center p-6 bg-google-red-50 rounded-2xl border-l-4 border-google-red">
+                    <div class="w-14 h-14 bg-google-red rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white text-xl">email</i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-google-gray-900 mb-1">Email</p>
+                      <a href="mailto:yash.kavaiya3@gmail.com" class="text-google-blue hover:text-google-blue-600 transition-colors">
+                        yash.kavaiya3@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center p-6 bg-google-green-50 rounded-2xl border-l-4 border-google-green">
+                    <div class="w-14 h-14 bg-google-green rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white text-xl">phone</i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-google-gray-900 mb-1">Phone</p>
+                      <a href="tel:+919265745362" class="text-google-blue hover:text-google-blue-600 transition-colors">
+                        +91 9265745362
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center p-6 bg-google-blue-50 rounded-2xl border-l-4 border-google-blue">
+                    <div class="w-14 h-14 bg-google-blue rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white text-xl">location_on</i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-google-gray-900 mb-1">Location</p>
+                      <p class="text-google-gray-600">Pune, Maharashtra, India</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center p-6 bg-google-yellow-50 rounded-2xl border-l-4 border-google-yellow">
+                    <div class="w-14 h-14 bg-google-yellow rounded-xl flex items-center justify-center mr-4">
+                      <i class="material-icons text-white text-xl">work</i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-google-gray-900 mb-1">Current Role</p>
+                      <p class="text-google-gray-600">Senior Analyst at Accenture</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-google-gray-200">
+                  <p class="font-semibold text-google-gray-900 mb-4">Connect on Social Media</p>
+                  <div class="flex space-x-4">
+                    <a href="https://linkedin.com/in/yashkavaiya" 
+                       target="_blank" 
+                       class="bg-google-blue hover:bg-google-blue-600 p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                       title="LinkedIn">
+                      <i class="fab fa-linkedin text-white text-xl"></i>
+                    </a>
+                    <a href="https://github.com/Yash-Kavaiya" 
+                       target="_blank" 
+                       class="bg-google-gray-800 hover:bg-google-gray-900 p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                       title="GitHub">
+                      <i class="fab fa-github text-white text-xl"></i>
+                    </a>
+                    <a href="mailto:yash.kavaiya3@gmail.com" 
+                       class="bg-google-red hover:bg-google-red-600 p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 material-design-shadow"
+                       title="Email">
+                      <i class="material-icons text-white text-xl">email</i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="animate-slide-left">
+              <div class="bg-white p-8 rounded-3xl material-design-shadow-lg border border-google-gray-100">
+                <h3 class="text-2xl font-bold text-google-gray-900 mb-6 font-heading">Send a Message</h3>
+                
+                <form class="space-y-6">
+                  <div>
+                    <label class="block text-google-gray-700 font-semibold mb-2">Name</label>
+                    <input type="text" 
+                           class="w-full px-4 py-4 rounded-xl border border-google-gray-300 focus:border-google-blue focus:ring-2 focus:ring-google-blue-100 outline-none transition-all duration-300"
+                           placeholder="Your full name">
+                  </div>
+                  
+                  <div>
+                    <label class="block text-google-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" 
+                           class="w-full px-4 py-4 rounded-xl border border-google-gray-300 focus:border-google-blue focus:ring-2 focus:ring-google-blue-100 outline-none transition-all duration-300"
+                           placeholder="your.email@example.com">
+                  </div>
+                  
+                  <div>
+                    <label class="block text-google-gray-700 font-semibold mb-2">Subject</label>
+                    <input type="text" 
+                           class="w-full px-4 py-4 rounded-xl border border-google-gray-300 focus:border-google-blue focus:ring-2 focus:ring-google-blue-100 outline-none transition-all duration-300"
+                           placeholder="Project collaboration, job opportunity, etc.">
+                  </div>
+                  
+                  <div>
+                    <label class="block text-google-gray-700 font-semibold mb-2">Message</label>
+                    <textarea rows="5" 
+                              class="w-full px-4 py-4 rounded-xl border border-google-gray-300 focus:border-google-blue focus:ring-2 focus:ring-google-blue-100 outline-none transition-all duration-300 resize-vertical"
+                              placeholder="Tell me about your project or how I can help..."></textarea>
+                  </div>
+                  
+                  <button type="submit" 
+                          class="w-full bg-google-blue hover:bg-google-blue-600 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 material-design-shadow hover:material-design-shadow-lg">
+                    <i class="material-icons inline mr-2 align-middle">send</i>
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-google-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <!-- About -->
+            <div class="col-span-2">
+              <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 google-gradient rounded-full animate-float"></div>
+                <h3 class="text-2xl font-bold font-heading">Yash Kavaiya</h3>
+              </div>
+              <p class="text-google-gray-300 mb-6 leading-relaxed">
+                Conversational AI Engineer with 3+ years of expertise in designing and implementing virtual agent solutions on Google's platforms. Specialized in Dialogflow CX and enterprise-grade AI implementations.
+              </p>
+              <div class="flex space-x-4">
+                <a href="mailto:yash.kavaiya3@gmail.com" 
+                   class="text-google-gray-400 hover:text-white transition-colors duration-300"
+                   title="Email">
+                  <i class="material-icons text-2xl">email</i>
+                </a>
+                <a href="https://linkedin.com/in/yashkavaiya" 
+                   target="_blank" 
+                   class="text-google-gray-400 hover:text-google-blue transition-colors duration-300"
+                   title="LinkedIn">
+                  <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/Yash-Kavaiya" 
+                   target="_blank" 
+                   class="text-google-gray-400 hover:text-white transition-colors duration-300"
+                   title="GitHub">
+                  <i class="fab fa-github text-2xl"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4 font-heading">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="#about" class="text-google-gray-400 hover:text-white transition-colors duration-300">About</a></li>
+                <li><a href="#experience" class="text-google-gray-400 hover:text-white transition-colors duration-300">Experience</a></li>
+                <li><a href="#expertise" class="text-google-gray-400 hover:text-white transition-colors duration-300">Expertise</a></li>
+                <li><a href="#projects" class="text-google-gray-400 hover:text-white transition-colors duration-300">Projects</a></li>
+                <li><a href="#education" class="text-google-gray-400 hover:text-white transition-colors duration-300">Education</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4 font-heading">Contact Info</h4>
+              <ul class="space-y-3">
+                <li class="text-google-gray-400 flex items-center">
+                  <i class="material-icons mr-2 text-sm">location_on</i>
+                  Pune, Maharashtra, India
+                </li>
+                <li>
+                  <a href="tel:+919265745362" 
+                     class="text-google-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                    <i class="material-icons mr-2 text-sm">phone</i>
+                    +91 9265745362
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:yash.kavaiya3@gmail.com" 
+                     class="text-google-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                    <i class="material-icons mr-2 text-sm">email</i>
+                    yash.kavaiya3@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="border-t border-google-gray-700 mt-12 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <p class="text-google-gray-400 text-center md:text-left">
+                &copy; 2024 Yash Kavaiya. All rights reserved.
+              </p>
+              <p class="text-google-gray-400 text-center md:text-right mt-2 md:mt-0">
+                Conversational AI Engineer specializing in Google Cloud Platform
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- JavaScript -->
+      <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+          });
+
+          // Close mobile menu when clicking outside
+          document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+              mobileMenu.classList.add('hidden');
+            }
+          });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+              }
+            }
+          });
+        });
+
+        // Enhanced navbar effects on scroll
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.scrollY;
+          
+          if (navbar) {
+            if (currentScrollY > 100) {
+              navbar.classList.add('backdrop-blur-xl', 'bg-white/95');
+              navbar.classList.remove('bg-white/95');
+            } else {
+              navbar.classList.remove('backdrop-blur-xl');
+              navbar.classList.add('bg-white/95');
+            }
+          }
+          
+          lastScrollY = currentScrollY;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right, .animate-scale-in').forEach(el => {
+          el.style.opacity = '0';
+          
+          if (el.classList.contains('animate-slide-up')) {
+            el.style.transform = 'translateY(30px)';
+          } else if (el.classList.contains('animate-slide-left')) {
+            el.style.transform = 'translateX(-30px)';
+          } else if (el.classList.contains('animate-slide-right')) {
+            el.style.transform = 'translateX(30px)';
+          } else if (el.classList.contains('animate-scale-in')) {
+            el.style.transform = 'scale(0.9)';
+          }
+          
+          el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+          observer.observe(el);
+        });
+
+        // Enhanced form submission with Material Design feedback
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalContent = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.innerHTML = '<i class="material-icons inline mr-2 align-middle animate-spin">sync</i>Sending...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+              submitButton.innerHTML = '<i class="material-icons inline mr-2 align-middle">check_circle</i>Message Sent!';
+              submitButton.classList.remove('bg-google-blue', 'hover:bg-google-blue-600');
+              submitButton.classList.add('bg-google-green', 'hover:bg-google-green-600');
+              
+              // Show success message
+              const successMessage = document.createElement('div');
+              successMessage.className = 'mt-4 p-4 bg-google-green-50 border border-google-green-200 rounded-xl text-google-green-800 text-center';
+              successMessage.innerHTML = '<i class="material-icons inline mr-2 align-middle">check_circle</i>Thank you for your message! I will get back to you soon.';
+              contactForm.appendChild(successMessage);
+              
+              // Reset form
+              setTimeout(() => {
+                this.reset();
+                submitButton.innerHTML = originalContent;
+                submitButton.disabled = false;
+                submitButton.classList.remove('bg-google-green', 'hover:bg-google-green-600');
+                submitButton.classList.add('bg-google-blue', 'hover:bg-google-blue-600');
+                successMessage.remove();
+              }, 3000);
+            }, 2000);
+          });
+        }
+
+        // Add Material Design ripple effect to buttons
+        function addRippleEffect(element) {
+          element.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          });
+        }
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('button, .btn, a[href^="#contact"]').forEach(addRippleEffect);
+
+        // Add CSS for ripple effect
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+          .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+          }
+          
+          @keyframes ripple-animation {
+            to {
+              transform: scale(4);
+              opacity: 0;
+            }
+          }
+          
+          button, .btn {
+            position: relative;
+            overflow: hidden;
+          }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Enhanced scroll-triggered animations with stagger effect
+        const staggerObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+              }, index * 100); // Stagger animation by 100ms
+            }
+          });
+        }, observerOptions);
+
+        // Apply stagger effect to cards in grid layouts
+        document.querySelectorAll('.grid > div').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+          staggerObserver.observe(el);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+          const scrolled = window.pageYOffset;
+          const heroSection = document.querySelector('#hero');
+          if (heroSection) {
+            const rate = scrolled * -0.5;
+            heroSection.style.transform = `translateY(${rate}px)`;
+          }
+        });
+
+        // Dynamic navbar background based on section
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach(link => {
+                link.classList.remove('text-google-blue', 'bg-google-blue-50');
+                if (link.getAttribute('href') === `#${id}`) {
+                  link.classList.add('text-google-blue', 'bg-google-blue-50');
+                }
+              });
+            }
+          });
+        }, {
+          threshold: 0.3
+        });
+
+        sections.forEach(section => {
+          sectionObserver.observe(section);
+        });
+
+        // Floating action button for quick contact
+        const fabHTML = `
+          <div id="fab" class="fixed bottom-8 right-8 z-40">
+            <a href="#contact" 
+               class="w-14 h-14 bg-google-blue hover:bg-google-blue-600 text-white rounded-full flex items-center justify-center material-design-shadow-lg hover:material-design-shadow transition-all duration-300 transform hover:scale-110">
+              <i class="material-icons text-xl">chat</i>
+            </a>
+          </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', fabHTML);
+
+        // Hide/show FAB based on scroll position
+        window.addEventListener('scroll', () => {
+          const fab = document.getElementById('fab');
+          const contactSection = document.getElementById('contact');
+          
+          if (fab && contactSection) {
+            const contactRect = contactSection.getBoundingClientRect();
+            const isContactVisible = contactRect.top < window.innerHeight && contactRect.bottom > 0;
+            
+            if (window.scrollY > 500 && !isContactVisible) {
+              fab.style.opacity = '1';
+              fab.style.transform = 'scale(1)';
+            } else {
+              fab.style.opacity = '0';
+              fab.style.transform = 'scale(0.8)';
+            }
+          }
+        });
+
+        // Add loading animation to page
+        window.addEventListener('load', () => {
+          const loader = document.createElement('div');
+          loader.id = 'page-loader';
+          loader.className = 'fixed inset-0 bg-white z-50 flex items-center justify-center';
+          loader.innerHTML = `
+            <div class="text-center">
+              <div class="w-16 h-16 google-gradient rounded-full animate-pulse mb-4 mx-auto"></div>
+              <p class="text-google-gray-600 font-medium">Loading Portfolio...</p>
+            </div>
+          `;
+          
+          document.body.prepend(loader);
+          
+          setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+              loader.remove();
+            }, 500);
+          }, 1500);
+        });
+
+        // Performance optimization: Lazy load images
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+              }
+            }
+          });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
+        });
+
+        // Add hover effects to cards
+        const cards = document.querySelectorAll('.material-design-shadow, .material-design-shadow-lg');
+        cards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-4px)';
+          });
+          
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+          });
+        });
+
+        // Console branding
+        console.log(`
+        🚀 Yash Kavaiya - Conversational AI Engineer Portfolio
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        
+        🎨 Design: Google Material Design
+        ⚡ Framework: Tailwind CSS + Vanilla JavaScript
+        🤖 Specialization: Dialogflow CX & Google Cloud Platform
+        
+        📧 Contact: yash.kavaiya3@gmail.com
+        🔗 LinkedIn: https://linkedin.com/in/yashkavaiya
+        💻 GitHub: https://github.com/Yash-Kavaiya
+        
+        Built with ❤️ and Google's design principles
+        `);
+
+        // Performance monitoring
+        if ('performance' in window) {
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log('⚡ Performance Metrics:', {
+              'Page Load Time': Math.round(timing.loadEventEnd - timing.navigationStart) + 'ms',
+              'DOM Content Loaded': Math.round(timing.domContentLoadedEventEnd - timing.navigationStart) + 'ms',
+              'First Paint': Math.round(timing.responseStart - timing.navigationStart) + 'ms'
+            });
+          });
+        }
+
+        // Add smooth transitions to all interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, input, textarea, [role="button"]');
+        interactiveElements.forEach(el => {
+          el.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+
+        // Initialize Material Design components
+        document.addEventListener('DOMContentLoaded', () => {
+          // Add focus rings to interactive elements
+          const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
+          focusableElements.forEach(el => {
+            el.addEventListener('focus', () => {
+              el.style.outline = '2px solid #4285F4';
+              el.style.outlineOffset = '2px';
+            });
+            
+            el.addEventListener('blur', () => {
+              el.style.outline = 'none';
+            });
+          });
+        });
+      </script>
+   </body>
+</html>
